@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+  <script>
+    function computerPlay() {
+      let carray = ["rock", "paper", "scissors"];
+      let compsel = carray[Math.floor(Math.random() * 3)];
+      return compsel;
+    }
+    let a = 0;
+    let b = 0;
+    for (let i = 0; i < 5; i++) {
+      playround();
+    }
+    function playround() {
+      let comp = computerPlay();
+      let player = prompt("Rock Paper or Scissors?", "");
+      let playsel = player.toLocaleLowerCase();
+      if (playsel == "rock" && comp == "rock") {
+        alert("Draw! Rock On!");
+      }
+      else if (playsel == "paper" && comp == "paper") {
+        alert("Draw! Two papers!");
+      }
+      else if (playsel == "scissors" && comp == "scissors") {
+        alert("Draw! Scissors are pairs!");
+      }
+      else if (playsel == "rock" && comp == "paper") {
+        alert("You lose! Paper catches rock");
+        b++;
+      }
+      else if (playsel == "rock" && comp == "scissors") {
+        alert("You win! Rock breaks scissors!");
+        a++;
+      }
+      else if (playsel == "paper" && comp == "rock") {
+        alert("You win! Paper catches rock");
+        a++;
+      }
+      else if (playsel == "paper" && comp == "scissors") {
+        alert("You Lose! Scissors cuts paper!");
+        b++;
+      }
+      else if (playsel == "scissors" && comp == "rock") {
+        alert("You lose! Rock breaks scissors!");
+        b++;
+      }
+      else if (playsel == "scissors" && comp == "paper") {
+        alert("You win! Scissors cuts paper!");
+        a++;
+      }
+      else {
+        alert("WhaT have you done!");
+      }
+    }
+    alert("You: " + a + "        " + "Computer: " + b);
+  </script>
+</body>
+
+</html>
